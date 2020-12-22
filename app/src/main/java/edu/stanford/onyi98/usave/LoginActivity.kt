@@ -31,11 +31,11 @@ class LoginActivity : AppCompatActivity() {
             auth.signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
                 buttonLogin.isEnabled = true
                 if (task.isSuccessful) {
-                    Toast.makeText(this, "Success!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show()
                     goBucketsActivity()
                 } else {
                     Log.i(TAG, "signInWithEmail failed", task.exception)
-                    Toast.makeText(this, "It Failed", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Login failed", Toast.LENGTH_SHORT).show()
                 }
             }
         }
