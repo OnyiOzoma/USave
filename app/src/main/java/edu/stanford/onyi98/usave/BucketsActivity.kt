@@ -6,19 +6,31 @@ import android.view.Menu
 import android.view.MenuItem
 import android.content.Intent
 import android.util.Log
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import edu.stanford.onyi98.usave.models.Bucket
+import kotlinx.android.synthetic.main.activity_buckets.*
 
 private const val TAG = "BucketsActivity"
 class BucketsActivity : AppCompatActivity() {
 
     private lateinit var firestoreDb: FirebaseFirestore
+    private lateinit var buckets: MutableList<Bucket>
+    private lateinit var adapter: BucketsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_buckets)
 
+        // Creating the layout file to represent one post - DONE
+        // Create Data source - DONE
+        buckets = mutableListOf()
+        // Create the adapter
+        adapter = BucketsAdapter(this, buckets)
+        // Bind the adapter and layout manager to the rv
+        rvBuckets.adapter = adapter
+        rvBuckets.layoutManager = LinearLayoutManager(this)
         // make a query to Firestore to retrieve buckets data
         firestoreDb = FirebaseFirestore.getInstance()
         val bucketsReference = firestoreDb
@@ -32,6 +44,9 @@ class BucketsActivity : AppCompatActivity() {
                 return@addSnapshotListener
             }
             val bucketList = snapshot.toObjects(Bucket::class.java)
+            buckets.clear()
+            buckets.addAll(bucketList)
+            adapter.notifyDataSetChanged()
             for(bucket in bucketList){
                 Log.i(TAG, "Bucket ${bucket}")
             }

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "335563656814",
+    "project_id": "usave-90695",
+    "storage_bucket": "usave-90695.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:335563656814:android:809d1ff6c6fbb1f3b3a07f",
+        "android_client_info": {
+          "package_name": "edu.stanford.onyi98.usave"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "335563656814-584jvglg35e38ugh0t0c17skcrqcvmqq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.stanford.onyi98.usave",
+            "certificate_hash": "6568b609b4958952a003edc8f4f8649d696a3fcd"
+          }
+        },
+        {
+          "client_id": "335563656814-9a8lmich2sfn8tn90i2uh1vie445uqdh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpvaUOkXHjEtH39erhTkNzST-gNtGQzSE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "335563656814-9a8lmich2sfn8tn90i2uh1vie445uqdh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
