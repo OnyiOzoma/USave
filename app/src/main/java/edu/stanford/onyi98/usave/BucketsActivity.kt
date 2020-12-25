@@ -76,6 +76,12 @@ open class BucketsActivity : AppCompatActivity() {
                 Log.i(TAG, "Bucket ${bucket}")
             }
         }
+
+        // simply creating an activity connected to the action button we made
+        fabCreate.setOnClickListener {
+            val intent = Intent(this, CreateActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
